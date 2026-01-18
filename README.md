@@ -2,7 +2,6 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg) ![Language](https://img.shields.io/badge/language-C%2B%2B-00599C.svg)
 
-[中文] | [English](#introduction)
 
 ---
 
