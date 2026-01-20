@@ -111,11 +111,11 @@ namespace Config {
         inline bool H_Collide = false;//穿墙控制
         inline bool H_Gravity = false;//重力修改开关
         inline bool H_Speed = false;//速度设置开关
-        inline bool H_AutoJump = false;//自动跳跃
+        inline bool H_AutoJump = false;//自动跳跃开关
         inline bool H_AbsoluteControl = false;//灵活控制人物开关
         inline bool H_MoveRecovery = false;//无后摇开关
         inline bool H_BotMove = false;//机器人禁止移动开关
-        inline bool H_Rotate = false;//围绕目标旋转
+        inline bool H_Rotate = false;//围绕目标旋转开关
 
         //普通功能，只需要按需执行函数，由我们自己的代码调用
         //主动执行

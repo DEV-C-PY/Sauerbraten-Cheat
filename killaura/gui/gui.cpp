@@ -47,7 +47,7 @@ namespace MenuPage {
 				ImGui::Spacing();
 				ImGui::Text(u8"交流群:1080622291");
 				ImGui::Spacing();
-				ImGui::Text(u8"最后更新时间:2026/1/18");
+				ImGui::Text(u8"最后更新时间:2026/1/19");
 				ImGui::Spacing();
 			}
 			ImGui::EndGroupPanel();
@@ -325,6 +325,9 @@ namespace gui {
 	void Init() {
 		auto& io = ImGui::GetIO();
 		io.Fonts->AddFontFromFileTTF("C:\\WINDOWS\\FONTS\\DENG.TTF", 18.0f, nullptr, io.Fonts->GetGlyphRangesChineseFull());
+		//设置风格
+		ImGui::StyleColorsLight();
+		SetupStyle();
 	}
 	//绘制总成
 	void Draw() {

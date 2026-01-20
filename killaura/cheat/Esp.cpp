@@ -111,7 +111,6 @@ void DrawEsp() {
         if (Cg_Esp::show_name) DrawBoxText(player, curColor, line, textEsp::name);
         if (Cg_Esp::show_distance) DrawBoxText(player, curColor, line, textEsp::距离);
         if (Cg_Esp::show_team) DrawBoxText(player, curColor, line, textEsp::队伍);
-        //if (Cg_Esp::show_ray) DrawBox2D(EntityManager[i], Cg_Esp::color);
     }
     //绘制环绕圈
     if (Cg_Func::H_Rotate && Cg_Recreation::point) {
@@ -497,7 +496,7 @@ void DrawPlayerNum() {
     draw->AddText(pFont, 20.0f, WindowSize, Cg_Color::Esp_VisibleColor, VisibleNum.c_str());
 }
 
-//绘制功能名称以及拖动逻辑
+//绘制功能名称
 //1.菜单开启状态（是否允许拖拽）  2.颜色    3.字体大小
 void DrawFuncState(bool is_menu_open, ImColor col, float font_size) {
     // 引用简化
@@ -524,7 +523,7 @@ void DrawFuncState(bool is_menu_open, ImColor col, float font_size) {
 
     // 调用通用拖拽函数
     if (HandleComponentDrag(pos, rectSize, is_menu_open, isDraggingFunc)) {
-        // [特有逻辑] 只有在拖拽发生时，才进行对齐方式的重新判断
+        //只有在拖拽时，才进行对齐方式的重新判断
         ImGuiIO& io = ImGui::GetIO();
 
         // 计算组件中心 X 坐标
@@ -532,14 +531,14 @@ void DrawFuncState(bool is_menu_open, ImColor col, float font_size) {
         // 屏幕中心 X 坐标
         float screenCenterX = io.DisplaySize.x / 2.0f;
 
-        // 判断：中心点在屏幕右侧 -> 右对齐，否则 -> 左对齐
+        //中心点在屏幕右侧 -> 右对齐，否则 -> 左对齐
         align = (centerX > screenCenterX) ? AlignMode::RIGHT : AlignMode::LEFT;
 
         //触发自动保存
         Config::FuncChange = true;
     }
 
-    // --- 绘制文字 ---
+    //绘制文字
     float currentY = pos.y;
 
     for (const auto& str : list) {
@@ -562,9 +561,6 @@ void DrawFuncState(bool is_menu_open, ImColor col, float font_size) {
         drawList->AddText(pFont, font_size, { drawX, currentY + 1 }, ImColor(0, 0, 0, 255), str.c_str());
         //实际绘制文字
         //drawList->AddText(pFont, font_size, { drawX, currentY }, col, str.c_str());
-
-        //亦或是选择加粗字体
-        //drawList->AddText(gui::pMyFont, font_size, { drawX, currentY }, col, str.c_str());
 
         //加粗绘制字体（循环三遍），观感比上面的方案好
         for (int i = 0; i < 3; ++i) {

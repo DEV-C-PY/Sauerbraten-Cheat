@@ -352,8 +352,6 @@ namespace Hooks {
 					float temp = *ct_Player::vectorZ;//记录原值
 					//自瞄到目标的角度
 					AimBot(*Cg_Recreation::point);
-					//开启自动开火就在这里射击敌人
-					if (Cg_Func::E_AutoFire) func::Shoot(EntityManager.LocalPlayer.EntityPtr, Cg_Recreation::point);
 					//左旋与右旋判断。+-90°是为了我们与目标连线后跟我们的视角形成一个直角
 					//本质上就是一直对着目标的直角方向运行（画圆）
 					if (*ct_Player::LeftState == -1)*ct_Player::Yaw += 90.0f;//往右走就右转

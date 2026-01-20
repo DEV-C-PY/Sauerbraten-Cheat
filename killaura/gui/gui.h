@@ -42,13 +42,9 @@ namespace UI {
 	bool SliderInt(const char* label, int* v, int v_min, int v_max, const char* format = "%d", ImGuiSliderFlags flags = 0);
 	//这是一个自定义的 Toggle 控件
 	bool ToggleButton(const char* str_id, bool* v);
-	// 辅助函数：绘制侧边栏 Tab 按钮
-	// label: 按钮文字
-	// index: 这个按钮对应的 tab 索引 (0, 1, 2...)
-	// selected_index: 当前选中的索引的引用
-	// size: 按钮大小
+	//绘制侧边栏 Tab 按钮
+	//1.按钮文字	2.对应的tab索引	3.当前选中的索引	4.按钮大小
 	void TabButton(const char* label, int index, int* selected_index, ImVec2 size);
-	
 	//网址文本
 	void TextURL(const char* name, const char* url, bool sameLineBefore = false);
 }

@@ -138,19 +138,21 @@ void EntityCache::UpdateBestTarget() {
 		}
 
 	}
+
+	//构建最佳目标
 	switch (Cg_combat::CTMode) {
-	case choiceMode::distance:
-		if (this->DistanceClosestTargetIndex != -1) {
-			this->bestTarget = this->EntityList[DistanceClosestTargetIndex - 1];//数组下标就等于游戏下标-1
-		}
-		break;
-	case choiceMode::sight:
-		if (this->SightClosestTargetIndex != -1) {
-			this->bestTarget = this->EntityList[SightClosestTargetIndex - 1];//数组下标就等于游戏下标-1
-		}
-		break;
-	default:
-		break;
+		case choiceMode::distance:
+			if (this->DistanceClosestTargetIndex != -1) {
+				this->bestTarget = this->EntityList[DistanceClosestTargetIndex - 1];//数组下标就等于游戏下标-1
+			}
+			break;
+		case choiceMode::sight:
+			if (this->SightClosestTargetIndex != -1) {
+				this->bestTarget = this->EntityList[SightClosestTargetIndex - 1];//数组下标就等于游戏下标-1
+			}
+			break;
+		default:
+			break;
 	}
 
 }

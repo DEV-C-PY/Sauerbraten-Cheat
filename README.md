@@ -72,7 +72,7 @@ This project serves as an educational resource for learning game reverse enginee
 1.  启动游戏 *Cube 2: Sauerbraten*。
 2.  使用任意 DLL 注入器 (如 Process Hacker, Xenos 等)。
 3.  将编译好的 DLL 注入到 `sauerbraten.exe` 进程中。
-4.  在游戏中按下 **`INSERT`** 键打开菜单。
+4.  在游戏中按下 **`HOME`** 键打开菜单。
 
 ---
 

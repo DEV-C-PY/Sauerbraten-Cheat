@@ -156,10 +156,6 @@ BOOL __stdcall hk_wglSwapBuffers(HDC hDc) {
         Hooks::Init();//hook初始化
         gui::Init();//绘制初始化
 
-        //设置风格
-        ImGui::StyleColorsLight();
-        gui::SetupStyle();
-
         is_initialized = true;
     }
 
